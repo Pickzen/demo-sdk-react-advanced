@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './FormFields.scss'
+import CustomHTML from "../CustomHTML/CustomHTML";
 
 function FormFields({fields, showErrors}) {
     const getFieldValues = () => {
@@ -9,25 +10,48 @@ function FormFields({fields, showErrors}) {
     const [fieldValues, setFieldValues] = useState(getFieldValues());
 
     const onChangeHandler = (event, field) => {
-        field.setValue(event.target.value);
+        if (field.getType()==='checkbox') {
+            field.setValue(event.target.checked);
+        } else {
+            field.setValue(event.target.value);
+        }
+
         setFieldValues(getFieldValues());
     };
 
-    const getFieldClass = (field) => {
+    const getFieldErrorClass = (field) => {
         return showErrors && !field.isValid()?'invalid':'';
     };
 
-    const fieldsComp = fields.map( (field,i) => (
-        <div key={i} className={'form-selection__input-container '+getFieldClass(field)}>
-            <input type="text" value={fieldValues[i]} onChange={ (event) => onChangeHandler(event, field) } placeholder={field.getTitle()} />
-        </div>
-    ));
+
+    const fieldsComp = fields.map( (field,i) => {
+        const type = field.getType();
+
+        let el;
+        if (type==='checkbox') {
+            el = (
+                <label>
+                    <input type="checkbox" checked={fieldValues[i]} onChange={ (event) => onChangeHandler(event, field) }  />
+                    <CustomHTML className="title" html={field.getTitle()} />
+                </label>
+            );
+        } else {
+            el = (
+                <input type="text" value={fieldValues[i]} onChange={ (event) => onChangeHandler(event, field) } placeholder={field.getTitle()} />
+            )
+        }
+
+        return (
+            <li key={i} className={`${field.getType()} ${getFieldErrorClass(field)}`}>
+                {el}
+            </li>);
+    });
 
     return (
         <div className="form-selection">
-            <div className="form-selection__grid">
+            <ul className="form-fields">
                 {fieldsComp}
-            </div>
+            </ul>
         </div>
     );
 }

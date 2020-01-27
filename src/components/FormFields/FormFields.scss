@@ -3,43 +3,55 @@
         display: flex;
         justify-content: center;
 
-        &__grid {
+        .form-fields {
             max-width: 600px;
             width: 100%;
-        }
 
-        &__input-container {
-            margin-bottom: var(--space-mini);
+            li {
+                margin-bottom: var(--space-mini);
+                list-style-type: none;
 
-            &.invalid input[type=text]{
-                background-color: #ffe2e2;
+                input[type="text"] {
+                    width: 100%;
+                    font-size: 14px;
+                    padding-left: var(--space-medium);
+                    height: 40px;
+                    border: 2px solid lightgrey;
+
+                    &::placeholder {
+                        font-size: 1em;
+                        font-weight: 500;
+                        color: var(--color-secondary);
+                    }
+
+                    &::placeholder {
+                        font-size: 0.75rem;
+                    }
+                }
+
+                &.checkbox {
+                    label:hover {
+                        cursor: pointer;
+                    }
+
+                    .title {
+                        display: inline-block;
+                    }
+                }
+
+                &.invalid {
+                    label {
+                        color: #f00;
+                    }
+
+                    input[type="text"] {
+                        border-color: #f00;
+                    }
+
+                }
             }
         }
 
-        input{
-            width: 100%;
-            padding-left: var(--space-medium);
-            height: 40px;
-            border: 2px solid lightgrey;
-            &::placeholder {
-                font-size: 1em;
-                font-weight: 500;
-                color: var(--color-secondary);
-            }
-        }
-
-        input::placeholder {
-            font-size: 0.75rem;
-        }
     }
 
-    .form-fields li.invalid label {
-        color: #f00;
-    }
-
-    .form-fields input[type="text"] {
-        width: 100%;
-        font-size: 14px;
-        height: 32px;
-    }
 }
