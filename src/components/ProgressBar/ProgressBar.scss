@@ -1,0 +1,17 @@
+.pickzen {
+    .progress-bar {
+        width: 100%;
+        margin: var(--space-mini) 0;
+        height: var(--space-micro);
+        background-color: var(--color-secondary);
+        border-radius: 10px;
+        overflow: hidden;
+
+        .status {
+            height: var(--space-micro);
+            background-color: var(--color-selected-border);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+    }
+}

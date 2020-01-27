@@ -1,0 +1,31 @@
+.pickzen {
+    .slide__description {
+        .question {
+            font-size: 1.5rem;
+            text-align: left;
+            font-weight: bold;
+            padding-bottom: var(--space-mini);
+
+            &__description {
+                font-size: 0.9rem;
+                text-align: left;
+                padding-bottom: var(--space-mini);
+                color: var(--color-secondary);
+            }
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .slide__description {
+            padding: var(--space-medium) 0;
+
+            .question {
+                text-align: center;
+
+                &__description {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.pickzen {
+    .text-selection {
+        &__grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        &__element {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--color-background-primary);
+            width: 100%;
+            text-align: center;
+            margin: 0 0 var(--space-mini) 0;
+            cursor: pointer;
+            border: 2px solid var(--color-background-primary);
+            padding: var(--space-medium);
+            transition: all 0.2s ease;
+
+            &:hover {
+                border-color: var(--color-selected-border);
+            }
+
+            &.selected {
+                border-color: var(--color-selected-border);
+                background-color: var(--color-selected-background);
+            }
+        }
+
+        &__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            overflow: hidden;
+
+        }
+
+        &__info {
+            padding: 0;
+        }
+
+        &__text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        &__image {
+            height: 250px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: var(--space-medium);
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .text-selection {
+            &__element {
+                width: calc(33% - var(--space-mini)*2);
+                margin: 0 var(--space-mini) var(--space-mini);
+            }
+        }
+    }
+}
+
+

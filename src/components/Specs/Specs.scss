@@ -1,0 +1,38 @@
+.specs {
+    font-size: 14px;
+
+    .spec-group {
+        padding: var(--space-micro) 0;
+
+        .spec-group-title {
+            margin-bottom: var(--space-micro);
+            font-weight: bold;
+        }
+
+        ul li {
+            padding: 2px 0;
+
+            .icon {
+                width: 15px;
+                height: 15px;
+                display: inline-block;
+                margin-right: 7px;
+                top: 2px;
+                position: relative;
+
+                &.check {
+                    background: url('/assets/check_off.svg') no-repeat;
+
+                    &.active {
+                        background: url('/assets/check_on.svg') no-repeat;
+                    }
+                }
+
+                &.dot {
+                    background: url('/assets/dot.svg') no-repeat;
+                }
+            }
+       }
+    }
+
+}

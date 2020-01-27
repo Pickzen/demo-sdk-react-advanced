@@ -1,0 +1,19 @@
+.pickzen {
+    .inline-results {
+        border-top: 1px solid var(--color-separator);
+        margin-top: var(--space-medium);
+        padding-top: var(--space-medium);
+        text-align: center;
+
+        &__header {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: var(--space-medium);
+        }
+
+        &__products {
+            display: flex;
+            flex-flow: row wrap;
+        }
+    }
+}

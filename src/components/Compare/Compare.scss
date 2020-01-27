@@ -1,0 +1,60 @@
+.pickzen {
+    .comparison-table {
+        text-align: center;
+
+        thead {
+            th {
+                padding-bottom: 20px;
+            }
+
+            .image {
+                text-align: center;
+                img {
+                    max-width: 200px;
+                }
+            }
+            .title {
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+
+        tbody {
+            tr {
+                border-bottom: 1px solid #eaeaea;
+
+                td {
+                    padding: 6px 14px 5px;
+                    word-wrap: break-word;
+
+                    &.header {
+                        font-size: 0.8em;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    .check {
+                        width: 15px;
+                        height: 15px;
+                        display: inline-block;
+                        margin-right: 7px;
+                        top: 2px;
+                        position: relative;
+                        background: url('/assets/check_off.svg') no-repeat;
+
+                        &.checked {
+                            background: url('/assets/check_on.svg') no-repeat;
+                        }
+                    }
+                }
+
+                td:first-child:not(.header) {
+                    text-align: left;
+                    font-weight: bold;
+                }
+
+
+            }
+        }
+    }
+}

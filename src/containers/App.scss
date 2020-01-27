@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,500,700");
+@import "../styles/reset.scss";
+
+// Vars
+.pickzen {
+    --space-mini: 10px;
+    --space-micro: 5px;
+    --space-medium: 20px;
+    --color-primary: #333333;
+    --color-secondary: #a8a8a8;
+    --color-selected-border: #f8981d;
+    --color-selected-background: #e1c8ae;
+    --color-background-primary: #d8d8d8;
+    --color-separator:#d8d8d8;
+
+    --button-color: #fff;
+    --button-color-background: #a8a8a8;
+    --button-color-background-hover: #b8b8b8;
+    --button-next-color-background: #f8981d;
+    --button-next-color-background-hover: #f8b01c;
+
+    --color-button-cta-view-text: #fff;
+    --color-button-cta-cart-text: #fff;
+    --color-button-cta-view: #3a3a3a;
+    --color-button-cta-cart: #f8981d;
+
+    --color-product-background-hover: #e9e9e9;
+}
+
+// Styles
+.pickzen {
+    font-family: "Lato";
+    color: var(--color-primary);
+
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    *[disabled] {
+        pointer-events: none;
+        opacity: 0.4;
+    }
+
+    button, .button {
+        border-radius: 20px;
+        background-color: var(--button-color-background);
+        padding: var(--space-mini) var(--space-medium);
+        border: none;
+        color: var(--button-color);
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    button:hover, .button:hover {
+        cursor: pointer;
+        background-color: var(--button-color-background-hover);
+    }
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}

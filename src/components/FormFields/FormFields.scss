@@ -1,0 +1,45 @@
+.pickzen {
+    .form-selection {
+        display: flex;
+        justify-content: center;
+
+        &__grid {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        &__input-container {
+            margin-bottom: var(--space-mini);
+
+            &.invalid input[type=text]{
+                background-color: #ffe2e2;
+            }
+        }
+
+        input{
+            width: 100%;
+            padding-left: var(--space-medium);
+            height: 40px;
+            border: 2px solid lightgrey;
+            &::placeholder {
+                font-size: 1em;
+                font-weight: 500;
+                color: var(--color-secondary);
+            }
+        }
+
+        input::placeholder {
+            font-size: 0.75rem;
+        }
+    }
+
+    .form-fields li.invalid label {
+        color: #f00;
+    }
+
+    .form-fields input[type="text"] {
+        width: 100%;
+        font-size: 14px;
+        height: 32px;
+    }
+}

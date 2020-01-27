@@ -1,0 +1,35 @@
+.pickzen {
+    .cover {
+        .header-holder {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            flex-direction: column;
+            background-position: bottom;
+
+            .box {
+                padding: 23px;
+                background-color: rgba(255,255,255,1);
+                border: 1px solid var(--color-secondary);
+            }
+
+            .cover-button-holder {
+                text-align: center;
+
+                button {
+                    background-color: var(--button-next-color-background);
+                }
+
+                button:hover {
+                    background-color: var(--button-next-color-background-hover);
+                }
+            }
+        }
+
+
+    }
+}
