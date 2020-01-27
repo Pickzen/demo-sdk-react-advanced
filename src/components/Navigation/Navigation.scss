@@ -3,6 +3,10 @@
         padding-top: var(--space-mini);
         display: flex;
         justify-content: space-between;
+
+        button {
+            font-size: 13px;
+        }
     }
 
     .next {
