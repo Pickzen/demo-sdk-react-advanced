@@ -21,15 +21,15 @@
                 position: relative;
 
                 &.check {
-                    background: url('/assets/check_off.svg') no-repeat;
+                    background: url('https://cdn.pickzen.com/themes/11/check_off.svg') no-repeat;
 
                     &.active {
-                        background: url('/assets/check_on.svg') no-repeat;
+                        background: url('https://cdn.pickzen.com/themes/11/check_on.svg') no-repeat;
                     }
                 }
 
                 &.dot {
-                    background: url('/assets/dot.svg') no-repeat;
+                    background: url('https://cdn.pickzen.com/themes/11/dot.svg') no-repeat;
                 }
             }
        }

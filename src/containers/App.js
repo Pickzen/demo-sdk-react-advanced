@@ -5,7 +5,8 @@ import './App.scss';
 
 const cfg = {
     code:window.pickzen&&window.pickzen.code?window.pickzen.code:'SH1FfJSgN8H',
-    //server:window.pickzen&&window.pickzen.server?window.pickzen.server:'https://local.pickzen.com'
+    server:window.pickzen&&window.pickzen.server?window.pickzen.server:'https://app.pickzen.com',
+    preview:window.pickzen.preview
 };
 
 const App = () => (

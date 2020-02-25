@@ -40,10 +40,10 @@
                         margin-right: 7px;
                         top: 2px;
                         position: relative;
-                        background: url('/assets/check_off.svg') no-repeat;
+                        background: url('https://cdn.pickzen.com/themes/11/check_off.svg') no-repeat;
 
                         &.checked {
-                            background: url('/assets/check_on.svg') no-repeat;
+                            background: url('https://cdn.pickzen.com/themes/11/check_on.svg') no-repeat;
                         }
                     }
                 }
