@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './FormFields.scss'
 import CustomHTML from "../CustomHTML/CustomHTML";
+import ImageUpload from "../ImageUpload/ImageUpload";
 
 function FormFields({fields, showErrors}) {
     const getFieldValues = () => {
@@ -23,7 +24,6 @@ function FormFields({fields, showErrors}) {
         return showErrors && !field.isValid()?'invalid':'';
     };
 
-
     const fieldsComp = fields.map( (field,i) => {
         const type = field.getType();
 
@@ -31,10 +31,13 @@ function FormFields({fields, showErrors}) {
         if (type==='checkbox') {
             el = (
                 <label>
-                    <input type="checkbox" checked={fieldValues[i]} onChange={ (event) => onChangeHandler(event, field) }  />
-                    <CustomHTML className="title" html={field.getTitle()} />
+                    <input type="checkbox" checked={fieldValues[i]}
+                           onChange={(event) => onChangeHandler(event, field)}/>
+                    <CustomHTML className="title" html={field.getTitle()}/>
                 </label>
             );
+        } else if (type==='image') {
+            el = <ImageUpload field={field} showErrors={showErrors} />
         } else {
             el = (
                 <input type="text" value={fieldValues[i]} onChange={ (event) => onChangeHandler(event, field) } placeholder={field.getTitle()} />

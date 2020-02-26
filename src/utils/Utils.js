@@ -22,6 +22,38 @@ class Utils {
              throw new Error("Invalid object");
          }
     }
+
+    waitForEngine=function(callback) {
+        let waited=0;
+        let timeout = 3;
+
+        let Engine = window.pickzen.Engine;
+
+        if (Engine) {
+            callback(Engine.default);
+        } else {
+            function wait(interval) {
+                setTimeout(function () {
+                    waited += interval;
+
+                    Engine = window.pickzen.Engine;
+                    if (Engine && Engine.default) {
+                        // Modulo Engine cargado por webpack
+                        Engine = Engine.default;
+                    }
+                    if (Engine !== undefined) {
+                        callback(Engine)
+                    } else if (waited >= timeout * 1000) {
+                        callback(null);
+                    } else {
+                        wait(interval * 2);
+                    }
+                }, interval);
+            }
+
+            wait(30);
+        }
+    };
 }
 
 export default new Utils()

@@ -3,13 +3,11 @@ import SlideContextProvider from '../context/SlideContext'
 import Slide from '../slides/Slide'
 import './App.scss';
 
-const init = window.pickzen||{};
+const cfg = window.pickzen||{};
 
-const cfg = {
-    code:init.code||'SH1FfJSgN8H',
-    server:init.server||'https://app.pickzen.com',
-    preview:init.preview||0
-};
+if (!cfg.code) cfg.code='SH1FfJSgN8H';
+if (!cfg.server) cfg.server='https://app.pickzen.com';
+if (!cfg.preview) cfg.preview=0;
 
 const App = () => (
   <SlideContextProvider>

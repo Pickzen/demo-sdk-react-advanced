@@ -16,7 +16,7 @@ const SlideContextProvider = ({children}) => {
 
     useEffect(() => {
         // Mounted
-        window.pickzen.waitForEngine((Engine)=>{
+        Utils.waitForEngine((Engine)=>{
             if (Engine) {
                 EngineRef.current = Engine;
 
