@@ -10,6 +10,7 @@ function Header() {
         <div className="slide__description">
             <CustomHTML className="question" html={slideModel.getTitle()} />
             <CustomHTML className="question__description" html={slideModel.getSubtitle()} />
+            <CustomHTML className="content__title" html={slideModel.getContentTitle()} />
         </div>
     );
 }

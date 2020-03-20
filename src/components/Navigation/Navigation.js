@@ -12,11 +12,11 @@ function Navigation({back, next, restart}) {
 
     return (
         <div className="navigation">
-            <button className="back" disabled={!nav.canBack} onClick={back}>Back</button>
+            <button className="back" disabled={!nav.canBack} onClick={back}>{nav.backLabel}</button>
 
             {nav.canRestart?<button onClick={restart}>Restart</button>:null}
 
-            <button className="next" disabled={!nav.canNext} onClick={next}>Next</button>
+            <button className="next" disabled={!nav.canNext} onClick={next}>{nav.nextLabel}</button>
         </div>
     );
 }

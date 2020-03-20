@@ -1,5 +1,5 @@
 import React from 'react';
-import './End.css'
+import './End.scss'
 import Navigation from "../../components/Navigation/Navigation";
 
 function End() {

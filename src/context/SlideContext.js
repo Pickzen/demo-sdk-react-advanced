@@ -51,12 +51,16 @@ const SlideContextProvider = ({children}) => {
             }
         }
 
-        const newSlideModel = Engine.getSlide();
-        setSlideModel(newSlideModel);
+        const slideModel = Engine.getSlide();
+        setSlideModel(slideModel);
 
-        const canRestart = newSlideModel.getType()==='End';
+        const canRestart = slideModel.getType()==='End';
+        const canBack = slideModel.canBack();
+        const canNext = slideModel.canNext();
+        const backLabel = slideModel.getBackLabel() || 'Back';
+        const nextLabel = slideModel.getNextLabel() || 'Next';
 
-        setNav( {canBack:newSlideModel.canBack(), canNext:newSlideModel.canNext(), canRestart});
+        setNav( {canBack, canNext, backLabel, nextLabel, canRestart});
 
         setProgress(Engine.getProgress(true, false));
 
@@ -105,7 +109,7 @@ const SlideContextProvider = ({children}) => {
             results,
             progress,
             compare:{isVisible:compareVisible, show:showCompare, hasItem:hasCompareItem, addItem:addCompareItem, removeItem:removeCompareItem},
-            nav:{canBack:nav.canBack, canNext:nav.canNext, canRestart:nav.canRestart, back, next, restart}
+            nav:{canBack:nav.canBack, canNext:nav.canNext, canRestart:nav.canRestart, backLabel:nav.backLabel, nextLabel:nav.nextLabel, back, next, restart}
         }}>
             {slideModel?children:null}
         </SlideContext.Provider>
