@@ -10,3 +10,13 @@
 ### Changed
 
 - SDK 0.5.0
+
+## 2020-04-03
+
+### Added
+
+- Support for uploading public images 
+
+### Changed
+
+- SDK 0.6.0
