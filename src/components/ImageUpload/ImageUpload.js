@@ -146,12 +146,12 @@ function ImageUpload( {field,showErrors} ) {
 
             setUploading(true);
 
-            Engine.httpGet('/EQuiz/uploadRequest?code='+code+'&type='+type).then(
+            Engine.httpGet(`/EQuiz/uploadRequest?code=${code}&type=${type}&public=${field.isPublic()?'1':'0'}`).then(
                 data => {
                     filePath = data.filePath;
                     secureUrl = data.secureUrl;
 
-                    Engine.httpUpload(data.uploadUrl, file, type, data.filePath, data.policy, data.signature, data.credential, data.expiration).then(
+                    Engine.httpUpload(data.uploadUrl, file, type, data.filePath, data.policy, field.isPublic(), data.signature, data.credential, data.expiration).then(
                         data => {
                             updateImage(filePath, secureUrl, file, field.getId(), function (success) {
                                 if (success) {
