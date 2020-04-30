@@ -8,14 +8,12 @@
     <title>Pickzen-React Interactive App</title>
 
     <script>
-        window.pickzen={
-            code:'SH1FfJSgN8H',
-        };
+        window.pickzen=window.pickzen || {};
+        window.pickzen.code='SH1FfJSgN8H';
     </script>
-
-    <script src="https://cdn.pickzen.com/sdk/pickzen-sdk-0.6.1.min.js"></script>
+    <script src="https://cdn-us.pickzen.com/sdk/v1/pickzen-sdk.min.js"></script>
 </head>
 <body>
-<div id="pickzen" class="pickzen"></div>
+    <div id="pickzen"></div>
 </body>
 </html>
