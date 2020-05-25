@@ -20,8 +20,10 @@ const SlideContextProvider = ({children}) => {
             if (Engine) {
                 EngineRef.current = Engine;
 
-                Engine.load(cfg.code, cfg.server, {}, cfg.preview).then(() => {
+                Engine.load(cfg.code, cfg.server, {}, cfg.preview).then( ({css}) => {
                     displayCurrentSlide();
+
+                    Utils.embedCSS(css);
                 }).catch((error) => {
                     console.error(error);
                 });

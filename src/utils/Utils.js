@@ -54,6 +54,13 @@ class Utils {
             wait(30);
         }
     };
+
+    embedCSS(css) {
+        var style = document.createElement('style');
+        style.setAttribute('type', 'text/css');
+        style.innerHTML = css;
+        document.getElementsByTagName('head')[0].appendChild(style);
+    }
 }
 
 export default new Utils()
