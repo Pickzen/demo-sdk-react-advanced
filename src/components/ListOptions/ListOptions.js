@@ -25,9 +25,9 @@ function ListOptions({options}) {
 
     return (
         <div className="text-selection__grid">
-            { options.map((o, i) => (
+            { options.filter( o => !o.isHidden() ).map((o, i) => (
                 <div onClick={() => select(o)}
-                     className={'text-selection__element ' + (selectedOptions[i] ? 'selected' : '')}
+                     className={`text-selection__element ${selectedOptions[i] ? 'selected' : ''} ${o.isDisabled()?'disabled':''}`}
                      key={o.getId()}>
 
                     {o.hasImage()?
