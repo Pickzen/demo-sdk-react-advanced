@@ -61,6 +61,16 @@ class Utils {
         style.innerHTML = css;
         document.getElementsByTagName('head')[0].appendChild(style);
     }
+
+    embedJSLibs(str) {
+        if (str) {
+            angular.forEach(str.split('\n'), function(lib){
+                var tag = document.createElement('script');
+                tag.setAttribute('src',lib);
+                document.head.appendChild(tag);
+            });
+        }
+    }
 }
 
 export default new Utils()
