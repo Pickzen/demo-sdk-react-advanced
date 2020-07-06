@@ -4,7 +4,7 @@ Advanced demo project with instant search and features table that shows how we c
   <img src="https://cdn.pickzen.com/sdk/statics/sdk-instant.gif">  
 </p>
 <p align="center">
-  <a target="_blank" href="https://cdn.pickzen.com/sdk/statics/sdk-instant-build/index.2.html">Try it!</a> 
+  <a target="_blank" href="https://cdn-us.pickzen.com/sdk/examples/instant/index_4.html">Try it!</a> 
 </p>  
 
 ## Usage
