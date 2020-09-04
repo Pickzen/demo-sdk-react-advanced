@@ -37,27 +37,38 @@ const SlideContextProvider = ({children}) => {
     const displayCurrentSlide = () => {
         const Engine = EngineRef.current;
 
-        // Partial results
-        const currentSelectedFilteringOptionIds = Engine.getSelectedOptionIds(true);
-        if (!Utils.haveSameElements(currentSelectedFilteringOptionIds, selectedFilteringOptionIds)) {
-            setSelectedFilteringOptionIds(currentSelectedFilteringOptionIds);
-            // Update results
-            if (currentSelectedFilteringOptionIds.length>0) {
-                Engine.getPartialResults()
-                    .then((results) => {
-                        setResults(results)
-                    })
-                    .catch(() => {
-                    });
-            } else {
-                setResults(null)
-            }
-        }
-
         const slideModel = Engine.getSlide();
         setSlideModel(slideModel);
 
-        const canRestart = slideModel.getType()==='End';
+        let isEndSlide = slideModel.isType('End');
+
+        // Partial results
+        if (isEndSlide) {
+            // If it is the end slide, try to use the existing results instead of fetching again
+            slideModel.getResults().then( (results) => {
+                setResults(results);
+            }).catch( (reason) => {
+                console.error(reason);
+            })
+        } else {
+            const currentSelectedFilteringOptionIds = Engine.getSelectedOptionIds(true);
+            if (!Utils.haveSameElements(currentSelectedFilteringOptionIds, selectedFilteringOptionIds)) {
+                setSelectedFilteringOptionIds(currentSelectedFilteringOptionIds);
+                // Update results
+                if (currentSelectedFilteringOptionIds.length > 0) {
+                    Engine.getPartialResults()
+                        .then((results) => {
+                            setResults(results)
+                        })
+                        .catch(() => {
+                        });
+                } else {
+                    setResults(null)
+                }
+            }
+        }
+
+        const canRestart = isEndSlide;
         const canBack = slideModel.canBack();
         const canNext = slideModel.canNext();
         const backLabel = slideModel.getBackLabel() || 'Back';
