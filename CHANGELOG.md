@@ -25,4 +25,10 @@
 
 ### Changed
 
-- SDK v1
+- SDK @1
+
+## 2021-01-12
+
+### Changed
+
+- SDK @2
