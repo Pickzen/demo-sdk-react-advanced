@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { SlideContext } from '../context/SlideContext';
 import Cover from '../slides/Cover/Cover';
-import Filter from '../slides/Filter/Filter';
-import Info from '../slides/Info/Info';
+import Question from '../slides/Question/Question';
 import Feedback from '../slides/Feedback/Feedback';
 import Form from '../slides/Form/Form';
 import End from '../slides/End/End';
@@ -16,8 +15,7 @@ const Slide = () => {
     const getSlideView = () => {
         switch (slideModel.getType()) {
             case 'Cover': return <Cover />;
-            case 'Filter': return <Filter />;
-            case 'Info': return <Info />;
+            case 'Question': return <Question />;
             case 'Feedback': return <Feedback />;
             case 'Form': return <Form />;
             case 'End': return <End />;
