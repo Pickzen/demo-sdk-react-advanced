@@ -30,7 +30,7 @@ class Utils {
         let Engine = window.pickzen.Engine;
 
         if (Engine) {
-            callback(Engine.default);
+            callback(Engine.default || Engine);
         } else {
             function wait(interval) {
                 setTimeout(function () {
