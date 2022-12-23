@@ -3,7 +3,7 @@ import { SlideContext } from '../../context/SlideContext';
 import ListOptions from '../../components/ListOptions/ListOptions'
 import Navigation from '../../components/Navigation/Navigation'
 import Header from '../../components/Header/Header'
-import './Question.css'
+import './Question.scss'
 
 function Question() {
     const {slideModel} = useContext(SlideContext);
